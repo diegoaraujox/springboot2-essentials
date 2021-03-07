@@ -1,0 +1,28 @@
+server:
+  error:
+    include-stacktrace: never
+
+spring:
+  application:
+    name: springboot2-essentials
+  datasource:
+    url: jdbc:mysql://localhost:3306/anime?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level: 
+    org:
+      hibernate:
+        SQL: DEBUG
+
+#Metrics SpringBoot Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus #ou coloca "*"
